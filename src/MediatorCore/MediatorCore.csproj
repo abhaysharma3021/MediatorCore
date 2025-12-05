@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- NuGet Package Metadata - UPDATE THESE VALUES -->
+    <PackageId>Abhay.MediatorCore</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Abhay</Authors>
+    <Company>Abhay</Company>
+    <Product>MediatorCore</Product>
+
+    <!-- Package Description -->
+    <Title>MediatorCore - Lightweight Mediator Pattern for .NET</Title>
+    <Description>A lightweight, high-performance mediator library for .NET implementing the mediator pattern with support for request/response (CQRS), notifications (events), and pipeline behaviors. Perfect for clean architecture and domain-driven design applications.</Description>
+    <Summary>Lightweight mediator pattern implementation for .NET with CQRS and event publishing support</Summary>
+    <PackageReleaseNotes>Initial release with request/response pattern, notifications, and pipeline behaviors support.</PackageReleaseNotes>
+
+    <!-- Package Tags (helps with discoverability) -->
+    <PackageTags>mediator;cqrs;request;response;notification;pipeline;behavior;command;query;event;clean-architecture;ddd;domain-driven-design</PackageTags>
+
+    <!-- URLs - UPDATE WITH YOUR GITHUB USERNAME -->
+    <PackageProjectUrl>https://github.com/abhaysharma3021/MediatorCore</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/abhaysharma3021/MediatorCore</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <!-- License -->
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <!-- README and Icon -->
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+
+    <!-- Copyright -->
+    <Copyright>Copyright © 2025 Abhay</Copyright>
+
+    <!-- Additional Metadata -->
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageType>Dependency</PackageType>
+
+    <!-- Source Link (enables debugging into your source code) -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- XML Documentation for IntelliSense -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+
+    <!-- Deterministic builds -->
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Include README.md in package (assumes it's in solution root) -->
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+
+    <!-- Include icon if it exists (assumes it's in solution root) -->
+    <None Include="..\..\icon.png" Pack="true" PackagePath="\" Condition="Exists('..\..\icon.png')" />
+
+    <!-- Alternatively, if README.md is in the project folder, use this instead: -->
+    <!-- <None Include="README.md" Pack="true" PackagePath="\" /> -->
+  </ItemGroup>
+
+</Project>

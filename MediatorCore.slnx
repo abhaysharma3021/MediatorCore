@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/samples/">
+    <Project Path="samples/MediatorCore.Samples/MediatorCore.Samples.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/MediatorCore/MediatorCore.csproj" />
+  </Folder>
+</Solution>
